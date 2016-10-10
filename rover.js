@@ -3,6 +3,7 @@ var myRover = {
   direction: 'N'
 };
 
+var rovermove 
 
 function goForward(rover) {
   switch(rover.direction) {
@@ -19,7 +20,6 @@ function goForward(rover) {
       rover.position[1]--
       break;
   };
-
   console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
 }
 
@@ -78,6 +78,9 @@ function roverRight(rover) {
   console.log("New Rover Direction: Facing " + rover.direction )
 }
 
+
+/*
+
 goForward(myRover);
 roverLeft(myRover);
 goForward(myRover);
@@ -90,5 +93,35 @@ goForward(myRover);
 goForward(myRover);
 goForward(myRover);
 goForward(myRover);
+*/
 
+
+// read the array and call the corresponding functions:
+
+function roverOrder(rover, order) { 
+		for (i=0 ; i< order.length; i++){
+			switch(order[i]){
+				case 'f':
+					goForward(rover);
+					break;
+				case 'b':
+					goBack(rover);
+					break;
+				case 'l':
+					roverLeft(rover);
+					break;
+				case 'r':
+					roverRight(rover);
+					break;		
+			}
+		}
+  
+ 
+
+}
+
+
+
+rovermove = 'ffffrffrbrl'
+roverOrder(myRover, rovermove)
 
