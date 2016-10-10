@@ -23,6 +23,24 @@ function goForward(rover) {
   console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
 }
 
+function goBack(rover) {
+  switch(rover.direction) {
+    case 'N':
+      rover.position[0]--
+      break;
+    case 'E':
+      rover.position[1]--
+      break;
+    case 'S':
+      rover.position[0]++
+      break;
+    case 'W':
+      rover.position[1]++
+      break;
+  };
+
+  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
+}
 
 function roverLeft(rover) { 
   switch(rover.direction) {
@@ -62,7 +80,15 @@ function roverRight(rover) {
 
 goForward(myRover);
 roverLeft(myRover);
+goForward(myRover);
+goForward(myRover);
 roverLeft(myRover);
 roverRight(myRover);
+goForward(myRover);
 roverLeft(myRover);
+goForward(myRover);
+goForward(myRover);
+goForward(myRover);
+goForward(myRover);
+
 
