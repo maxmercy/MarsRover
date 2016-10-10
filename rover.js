@@ -36,7 +36,7 @@ function goForward(rover) {
 	} 
 
 
-  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
+  console.log("Forward " + rover.direction)
 }
 
 function goBack(rover) {
@@ -55,7 +55,7 @@ function goBack(rover) {
       break;
   };
 
-  console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
+  console.log("Forward " + rover.direction)
 }
 
 function roverLeft(rover) { 
@@ -73,7 +73,7 @@ function roverLeft(rover) {
       rover.direction = 'N'
       break;
   };
-  console.log("New Rover Direction: Facing " + rover.direction )
+  console.log("turn " + rover.direction )
 }
 
 function roverRight(rover) { 
@@ -91,7 +91,7 @@ function roverRight(rover) {
       rover.direction = 'N'
       break;
   };
-  console.log("New Rover Direction: Facing " + rover.direction )
+  console.log("turn " + rover.direction)
 }
 
 
@@ -101,6 +101,8 @@ function roverRight(rover) {
 // read the array and call the corresponding functions:
 
 function roverOrder(rover, order) { 
+
+		console.log('Initial position [' + rover.position + '] facing ' + rover.direction)
 		for (i=0 ; i< order.length; i++){
 			switch(order[i]){
 				case 'f':
@@ -119,14 +121,15 @@ function roverOrder(rover, order) {
 		}
   
 
-
  console.log("The Rover reach the Position: [" + rover.position[0] + ", " + rover.position[1] + "], Facing " + rover.direction )
 
 
 }
 
 
+rovermove = prompt('Please submit the sequence of move of the rover. \n f for go forward\nb for go back\nr for turn right\nl for turn left\nFor exemple: flf go forward / left : forward');
 
-rovermove = 'fffffffffffffffrfffffffffffffffffrffffffffffffffffffrfffffffffffff'
+
 roverOrder(myRover, rovermove)
+
 
